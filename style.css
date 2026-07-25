@@ -1,0 +1,43 @@
+        body,*{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            height: 12vh;
+            width: 100%;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+        }
+        #game-area{
+            height: 88vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background-color: rgb(30, 31, 31);
+        }
+        .bubbles{
+            width: 55px;
+            height: 55px;
+            font-size: 2rem;
+            border-radius: 50px;
+            background-color: aquamarine;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* transition: .5s; */
+        }
+ #game-over{
+    position:fixed;
+    top: 40%;
+    left: 45%;
+    font-size: 2rem;
+    font-weight: 700;
+    z-index: 3;
+}
