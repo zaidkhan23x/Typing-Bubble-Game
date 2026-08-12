@@ -4,13 +4,19 @@ let m_point=0; //missed point
 let game_over = document.querySelector("#game-over");
 let t1=1000,t2=25;
 let letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const over = setInterval(CreateBubble,t1);
-// CreateBubble();
-setInterval(()=>{
+let s_game = document.getElementById("game-start");
+
+s_game.addEventListener("click",()=>{
+    s_game.classList.add("delete-animation");
+    const over = setInterval(CreateBubble,t1);
+    setInterval(()=>{
     if(m_point===15){
         clearInterval(over);
     }
+    
 },t1);
+});
+// CreateBubble();
 
 function CreateBubble(){
 let letter= letters[Math.floor(Math.random()*letters.length)]   ;
@@ -23,9 +29,9 @@ bubble.style.left = e_left + "px"
 bubble.style.top = "-50px";
 let a=-50;
 const fall = setInterval(()=>{
-  
+    s_game.remove();
     // console.log(a);
-    a+=3;
+      a+=3;
       bubble.style.top=a+"px";
     if(a > window.innerHeight){
         bubble.remove();
@@ -33,9 +39,9 @@ const fall = setInterval(()=>{
          m_point++;
          document.getElementById("m-point").textContent=m_point;
     }
-    if(m_point===15){
+    if(m_point>=15){
         clearInterval(fall);
-         game_over.style.color="red";
+        //  game_over.style.color="red";
         game_over.textContent="Game over";
     }
 },t2);

@@ -33,11 +33,18 @@
             align-items: center;
             /* transition: .5s; */
         }
- #game-over{
+ #game-over,#game-start{
     position:fixed;
     top: 40%;
     left: 45%;
     font-size: 2rem;
     font-weight: 700;
+    color: red;
     z-index: 3;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.delete-animation{
+    opacity: 0;
+    transform: translateZ(-500px) scale(5); /*outside animation*/
+    /* transform: scale(0); /*inside animation */
 }
